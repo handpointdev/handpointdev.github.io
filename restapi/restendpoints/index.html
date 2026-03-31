@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.5.2">
 <title data-rh="true">REST API Endpoints | Handpoint</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.handpoint.io/restapi/restendpoints"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="REST API 2.25.0"><meta data-rh="true" name="docusaurus_tag" content="docs-restapi-REST API 2.25.0"><meta data-rh="true" name="docsearch:version" content="REST API 2.25.0"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-restapi-REST API 2.25.0"><meta data-rh="true" property="og:title" content="REST API Endpoints | Handpoint"><meta data-rh="true" name="description" content="/initialize"><meta data-rh="true" property="og:description" content="/initialize"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://developer.handpoint.io/restapi/restendpoints"><link data-rh="true" rel="alternate" href="https://developer.handpoint.io/restapi/restendpoints" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.handpoint.io/restapi/restendpoints" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Handpoint RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Handpoint Atom Feed"><link rel="stylesheet" href="/assets/css/styles.3468831c.css">
-<script src="/assets/js/runtime~main.634e7036.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.52945344.js" defer="defer"></script>
 <script src="/assets/js/main.a735b91d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -247,7 +247,7 @@ that was generated previously (for example, by a <code>saleAndTokenizeCard</code
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="motorefund">/moto/refund<a href="#motorefund" class="hash-link" aria-label="Direct link to /moto/refund" title="Direct link to /moto/refund">​</a></h3>
 <p><code>MotoRefund</code></p>
 <p><code>POST /moto/refund</code> is used to perform a <strong>MOTO refund without a payment reader</strong>.</p>
-<p>The refund is <strong>linked</strong> to a previous transaction via <code>originalGuid</code>, and the gateway reuses the card associated with that
+<p>The refund is <strong>linked</strong> to a previous MOTO sale via <code>originalGuid</code>, and the gateway reuses the card associated with that
 original transaction. No card data is passed in the refund request.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-1">Parameters<a href="#parameters-1" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
 <table><thead><tr><th>Parameter</th><th>Notes</th></tr></thead><tbody><tr><td><code>Header: ApiKeyCloud</code> <span class="badge badge--primary">Required</span></td><td>Cloud API key used to authenticate the merchant.</td></tr><tr><td><code>Request Body: MotoRefundRequest</code> <span class="badge badge--primary">Required</span></td><td><a href="/restapi/restobjects#motoRefundRequest">MotoRefundRequest</a> object containing <code>originalGuid</code>, <code>amount</code>, <code>currency</code> and optional merchant references.</td></tr></tbody></table>
@@ -284,10 +284,10 @@ original transaction. No card data is passed in the refund request.</p>
 <hr>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="motoreversal">/moto/reversal<a href="#motoreversal" class="hash-link" aria-label="Direct link to /moto/reversal" title="Direct link to /moto/reversal">​</a></h3>
 <p><code>MotoReversal</code></p>
-<p><code>POST /moto/reversal</code> is used to <strong>reverse (void)</strong> a previous operation. And will be processed via the no-reader MOTO endpoints.</p>
-<p>The request is linked to the original operation via <code>originalGuid</code>. No card data is sent; the gateway uses the original
+<p><code>POST /moto/reversal</code> is used to <strong>reverse (void)</strong> a previous MOTO operation processed via the no-reader MOTO endpoints.</p>
+<p>The request is linked to the original sale via <code>originalGuid</code>. No card data is sent; the gateway uses the original
 transaction information.</p>
-<p>Reversals are typically used to cancel a transaction shortly after authorization, subject to acquirer rules.</p>
+<p>Reversals are typically used to cancel a MOTO sale shortly after authorization, subject to acquirer rules.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="parameters-2">Parameters<a href="#parameters-2" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h4>
 <table><thead><tr><th>Parameter</th><th>Notes</th></tr></thead><tbody><tr><td><code>Header: ApiKeyCloud</code> <span class="badge badge--primary">Required</span></td><td>Cloud API key used to authenticate the merchant.</td></tr><tr><td><code>Request Body: MotoReversalRequest</code> <span class="badge badge--primary">Required</span></td><td><a href="/restapi/restobjects#motoReversalRequest">MotoReversalRequest</a> object referencing the original MOTO transaction (<code>originalGuid</code>) and including the reversal <code>amount</code> and <code>currency</code>.</td></tr></tbody></table>
 <p>Typical fields (see <a href="/restapi/restobjects#motoReversalRequest">MotoReversalRequest</a> for full details):</p>
