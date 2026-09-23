@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhandpoint_developer_portal_v2=self.webpackChunkhandpoint_developer_portal_v2||[]).push([[8617],{8648:(e,t,r)=>{r.r(t),r.d(t,{default:()=>p});r(6540);var a=r(6347),n=r(4848);function p(){return(0,n.jsx)(a.rd,{to:"/get-started/"})}}}]);
