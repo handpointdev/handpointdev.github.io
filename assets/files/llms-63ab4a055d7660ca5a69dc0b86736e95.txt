@@ -1,6 +1,6 @@
 # Handpoint Developer Documentation
 # Fetch the acquirer URL for full implementation detail.
-# Generated: 2026-09-25T07:36:18.646Z
+# Generated: 2026-09-25T09:29:24.627Z
 
 ## Acquirers
 EPI | geography: US, Canada | sale(emv-sale+key-entry-sale+moto-sale+sale-and-tip+sale-and-tokenize), refund(card-present+moto-refund+key-entry-refund), reversal(reversal+remote-reversal), tip-adjustment, pre-auth(pre-auth-create+key-entry-pre-auth+pre-auth-capture+pre-auth-void), moto, tokenization(procharge), batching, pre-auth-capture-reversal, avs-for-moto, fee-mitigation | cards: VISA, MC, Discover | url: /acquirers/epi
