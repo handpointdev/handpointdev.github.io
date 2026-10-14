@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhandpoint_developer_portal_v2=self.webpackChunkhandpoint_developer_portal_v2||[]).push([[3850],{3850:(e,r,p)=>{p.d(r,{createArchitectureServices:()=>t.S});var t=p(7370);p(9807)}}]);
