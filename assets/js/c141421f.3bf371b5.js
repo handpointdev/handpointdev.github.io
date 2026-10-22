@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhandpoint_developer_portal_v2=self.webpackChunkhandpoint_developer_portal_v2||[]).push([[957],{936:e=>{e.exports=JSON.parse('{"name":"docusaurus-theme-search-algolia","id":"default"}')}}]);
